@@ -15,11 +15,11 @@ const prepareAndStartServer = ()=>{
     
     app.listen(PORT,()=>{
         console.log(`Server started at port ${PORT}`);
-        const service = new UserService();
-        const token = service.createToken({email : "rahul@gmail.com" , id : 1});
-        // console.log(token);
-        const response = service.verifyToken(token);
-        console.log(response);
+        // const service = new UserService();
+        // const token = service.createToken({email : "rahul@gmail.com" , id : 1});
+        // // console.log(token);
+        // const response = service.verifyToken(token);
+        // console.log(response);
     })
 }
 
