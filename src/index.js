@@ -4,7 +4,7 @@ const { PORT }= require('./config/serverConfig');
 const bodyParser = require('body-parser');
 const app = express();
 
-const UserService = require('./services/user-service');
+// const UserService = require('./services/user-service');
 
 
 const prepareAndStartServer = ()=>{

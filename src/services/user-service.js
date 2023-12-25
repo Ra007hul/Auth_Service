@@ -18,7 +18,7 @@ class UserService {
         }
     }
 
-    async signIn(email , plainPassword){
+    async signIn(email, plainPassword){
         try {
             const user = await this.userRepository.findByEmail(email);
 
@@ -34,6 +34,24 @@ class UserService {
             
         } catch (error) {
             console.log("Something went in the wrong in the signIn process");
+            throw error
+        }
+    }
+
+    async isAuthenticated(token){
+        try {
+            const response = this.verifyToken(token);
+            if(!response){
+                throw {error : 'Invalid token'}
+            }
+            const user = this.userRepository.getById(response.id);
+            if(!user){
+                throw {error : 'No user with the corresponding token exist'}
+            }
+            return user.id;
+        } catch (error)
+          {
+            console.log('Something went wrong in the isAuthenticated function of service layer');
             throw error
         }
     }
@@ -54,7 +72,7 @@ class UserService {
             return response;
         } catch (error) {
             console.log("something went wrong in token validation",error );
-            throw error;
+            throw error
         }
     }
 

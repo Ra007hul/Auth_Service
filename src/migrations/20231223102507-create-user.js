@@ -16,7 +16,6 @@ module.exports = {
         validate:{
         isEmail : true
       }
-
       },
       password: {
         type: Sequelize.STRING ,

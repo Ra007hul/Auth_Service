@@ -44,7 +44,7 @@ class UserRepository {
                     email : userEmail
                 }
             })
-            return user;;
+            return user;
         } catch (error) {
             console.log("something went wrong in the findByEmail Service layer");
             throw error

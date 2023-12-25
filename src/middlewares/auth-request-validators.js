@@ -1,4 +1,4 @@
-const validateUserAuth = (req , res)=> {
+const validateUserAuth = (req , res ,next)=> {
     if(
         !req.body.email ||
         !req.body.password
@@ -11,8 +11,9 @@ const validateUserAuth = (req , res)=> {
             err : 'Email or password is missing'
         })
 
-        next();
+        
     }
+    next();
 }
 module.exports = {
     validateUserAuth
