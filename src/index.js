@@ -21,9 +21,9 @@ const prepareAndStartServer = ()=>{
         // const response = service.verifyToken(token);
         // console.log(response);
         // db.sequelize.sync({alter:true})
-        const u1 = await User.findByPk(1);
-        const r1 = await Role.findByPk(1);
-        u1.addRole(r1);
+        // const u1 = await User.findByPk(1);
+        // const r1 = await Role.findByPk(1);
+        // u1.addRole(r1);
     })
 }
 
